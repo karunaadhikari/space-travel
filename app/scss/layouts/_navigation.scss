@@ -16,20 +16,19 @@
     margin-right: 0.5em;
   }
 
-  &__underline {
+  &__underline > * {
     cursor: pointer;
     padding: 0;
     border: 0;
-    border-bottom: red;
+    border-bottom: 0.2rem solid;
   }
 
-  &__underline > * :hover,
+  &__underline > *:hover,
   &__underline > * :focus {
-    border-color: red;
+    border-color: white;
   }
 
   &__underline > .active {
-    color: red;
-    border-color: red;
+    border-color: white;
   }
 }
