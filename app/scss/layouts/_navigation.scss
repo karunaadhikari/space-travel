@@ -1,0 +1,35 @@
+.navigation {
+  &__primary {
+    --gap: 8rem;
+    --underline-gap: 2rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  &__primary a {
+    text-decoration: none;
+  }
+
+  &__primary a > span {
+    font-weight: 700;
+    margin-right: 0.5em;
+  }
+
+  &__underline {
+    cursor: pointer;
+    padding: 0;
+    border: 0;
+    border-bottom: red;
+  }
+
+  &__underline > * :hover,
+  &__underline > * :focus {
+    border-color: red;
+  }
+
+  &__underline > .active {
+    color: red;
+    border-color: red;
+  }
+}
