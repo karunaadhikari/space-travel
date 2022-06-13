@@ -65,6 +65,10 @@ select {
   gap: var(--gap, 1rem);
 }
 
+.flex.even-columns>* {
+  width: 100%;
+}
+
 .grid {
   display: grid;
   gap: var(--gap, 1rem);
@@ -74,4 +78,26 @@ select {
   padding-inline: 2em;
   margin-inline: auto;
   max-width: 80rem;
+}
+
+.d-block {
+  display: block;
+}
+
+@include u.breakpoint(large) {
+  :root {
+    --fs-800: 6.25rem;
+    --fs-700: 3.5rem;
+    --fs-600: 2rem;
+    --fs-400: 1.125rem;
+  }
+}
+
+@include u.breakpoint(medium) {
+  /* font-sizes */
+  --fs-800: 5rem;
+  --fs-700: 2.5rem;
+  --fs-600: 1.5rem;
+  --fs-400: 1rem;
+
 }

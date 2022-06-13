@@ -1,15 +1,26 @@
+@use "../util" as u;
+
 .grid-container {
     display: grid;
     column-gap: 2rem;
-    grid-template-columns: minmax(2rem, 1fr) repeat(2, minmax(0, 30rem)) minmax(2rem, 1fr);
+    text-align: center;
+    place-items: center;
+    padding-inline: 1rem;
+    row-gap: 10%;
 
-
-    &>*:first-child {
-        grid-column: 2;
-
+    &* {
+        max-width: 10 ch; //character
     }
 
-    &>*:last-child {
-        grid-column: 3;
+    &--home {
+        padding-bottom: max(6rem, 20vh);
+        align-items: end;
+    }
+
+    @include u.breakpoint(large) {
+        text-align: left;
+        column-gap: 2rem;
+        grid-template-columns: 1fr 1fr;
+
     }
 }
