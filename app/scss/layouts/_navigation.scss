@@ -3,23 +3,40 @@
 
 .navigation {
   &__primary {
-    --underline-gap: 2rem;
+    --gap: clamp(1.5rem, 5vw, 3.5rem);
+    --underline-gap: .5rem;
     list-style: none;
-    padding: 0;
+    padding: 1rem;
     margin: 0;
+    background: hsl(230 35% 7%);
+    opacity: .75;
+    backdrop-filter: blur(1.5rem);
 
     @media (max-width: 35rem) {
-      --underline-gap: 2rem;
+      --underline-gap: .5rem;
       position: fixed;
       z-index: 1000;
       inset: 0 0 0 30%;
-      background-color: black;
+      backdrop-filter: blur(1.5rem);
       list-style: none;
       padding: min(20rem, 15vh) 5rem;
       margin: 0;
       flex-direction: column;
-
+      transform: translate(100%);
+      transition: transform 500m ease-in-out;
     }
+
+    @media (min-width: 35em) and (max-width: 45em) {
+      padding-inline: 3rem;
+    }
+
+    a>span {
+      display: none;
+    }
+  }
+
+  &__primary[data-visible="true"] {
+    transform: translateX(0);
   }
 
   &__primary a {
@@ -33,19 +50,19 @@
 
   &__underline>* {
     cursor: pointer;
-    padding: 0;
+    padding: var(--underline-gap, 1rem) 0;
     border: 0;
     border-bottom: .2rem solid;
   }
 
   &__underline>*:hover,
-  &__underline>* :focus {
+  &__underline>*:focus {
     border-color: grey;
+    opacity: .25;
   }
 
 
   &__underline>.active {
-    color: grey;
     border-color: grey;
 
     @media (max-width: 35rem) {
