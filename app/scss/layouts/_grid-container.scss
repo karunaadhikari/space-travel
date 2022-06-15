@@ -6,7 +6,7 @@
     text-align: center;
     place-items: center;
     padding-inline: 1rem;
-    row-gap: 10%;
+    row-gap: 17%;
 
     &* {
         max-width: 10 ch; //character
@@ -21,6 +21,5 @@
         text-align: left;
         column-gap: 2rem;
         grid-template-columns: 1fr 1fr;
-
     }
 }
