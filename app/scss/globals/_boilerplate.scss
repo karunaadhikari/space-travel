@@ -31,6 +31,11 @@ body {
   min-height: 100vh;
 }
 
+body {
+  background-size: cover;
+  background-position: bottom center;
+}
+
 img,
 picutre {
   max-width: 100%;
@@ -94,10 +99,13 @@ select {
 }
 
 @include u.breakpoint(medium) {
+
   /* font-sizes */
-  --fs-800: 5rem;
-  --fs-700: 2.5rem;
-  --fs-600: 1.5rem;
-  --fs-400: 1rem;
+  :root {
+    --fs-800: 5rem;
+    --fs-700: 2.5rem;
+    --fs-600: 1.5rem;
+    --fs-400: 1rem;
+  }
 
 }
