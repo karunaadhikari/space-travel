@@ -1,0 +1,14 @@
+@use "../util" as u;
+
+.hero {
+    background-image: url(/app/assets/home/background-home-mobile.jpg);
+
+    @include u.breakpoint(medium) {
+        background-image: url(/app/assets/home/background-home-tablet.jpg);
+        background-position: center center;
+    }
+
+    @include u.breakpoint(large) {
+        background-image: url(/app/assets/home/background-home-desktop.jpg);
+    }
+}
