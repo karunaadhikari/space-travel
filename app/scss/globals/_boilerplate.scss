@@ -27,13 +27,16 @@ picture {
 }
 
 body {
+  font-family: var(--ff-sans-normal);
+  font-size: var(--fs-400);
   line-height: 1.5;
   min-height: 100vh;
-}
-
-body {
+  display: grid;
+  grid-template-rows: min-content 1fr;
+  overflow-x: hidden;
   background-size: cover;
   background-position: bottom center;
+
 }
 
 img,
@@ -87,6 +90,56 @@ select {
 
 .d-block {
   display: block;
+}
+
+.mobile-nav-toggle {
+  display: none;
+
+  @media (max-width: 35rem) {
+    display: block;
+    position: absolute;
+    z-index: 2000;
+    right: 1rem;
+    top: 2rem;
+    background: transparent;
+    background-image: url(/app/assets/shared/icon-hamburger.svg);
+    background-repeat: no-repeat;
+    width: 1.5rem;
+    aspect-ratio: 1;
+    border: 0;
+  }
+}
+
+.mobile-nav-toggle[aria-expanded="true"] {
+  background-image: url(/app/assets/shared/icon-close.svg);
+}
+
+.primary-header {
+  justify-content: space-between;
+  align-items: center;
+}
+
+@media (min-width: 45em) {
+  .primary-header::after {
+    content: '';
+    display: block;
+    position: relative;
+    height: 1px;
+    width: 100%;
+    margin-right: -2.5rem;
+    background: white;
+    opacity: 0.75;
+    order: 1;
+  }
+}
+
+nav {
+  order: 2;
+}
+
+
+.logo {
+  margin: 1.5rem clamp(1.5rem, 5vw, 3.5rem);
 }
 
 @include u.breakpoint(large) {
